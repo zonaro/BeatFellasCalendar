@@ -150,6 +150,7 @@ header h1 {
 
 .event-item:not(.event-closed) {
   color: #ffffff;
+  text-decoration: line-through;
 }
 
 .event-item:not(.event-closed) .event-day {
