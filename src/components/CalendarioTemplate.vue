@@ -22,7 +22,7 @@
       </header>
       <main
         class="d-flex justify-content-center mb-4 mx-auto px-5 overflow-hidden"
-        :class="ratio === 'ratio-1x1' ? '' : 'flex-column-reverse'"
+        :class="ratio === 'ratio-1x1' ? '' : 'flex-column'"
         style="width: 100%"
       >
         <aside class="text-aside bf-yellow-color py-5">
@@ -79,6 +79,11 @@
         />
       </footer>
     </div>
+    <div
+      v-if="ratio === 'ratio-9x16'"
+      class="gui-instagram"
+      :style="guiInstagram"
+    ></div>
   </div>
 </template>
 <script>
@@ -90,6 +95,9 @@ export default {
 
   data() {
     return {
+      guiInstagram: {
+        "background-image": "url(" + require("../assets/gui-overlay.png") + ")",
+      },
       templateBackground: {
         "background-image":
           "linear-gradient(" +
@@ -200,5 +208,29 @@ header h1 {
 }
 .event-info {
   font-family: "GlacialIndifference";
+}
+
+.gui-instagram {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ratio.ratio-9x16 header:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding-top: 2rem;
+}
+
+.ratio.ratio-9x16 footer {
+  margin-bottom: 12rem;
 }
 </style>
