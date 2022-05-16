@@ -184,6 +184,9 @@ header h1 {
 .event-green .event-type {
   color: #00ff00;
 }
+.event-red .event-type {
+  color: #ff0000;
+}
 .event-day {
   margin-right: 0.75rem;
   text-align: right;
