@@ -50,27 +50,7 @@ export default {
 
   methods: {
 
-    fixData(data) {
-      data.date = new Date(data.year, data.month);
-      data.events.forEach(element => {
-        element.date = new Date(data.year, data.month, element.day, element.hour, element.minutes, 0, 0);
-        element.closed = element.date < new Date();
-      });
 
-      data.events.sort(function (a, b) {
-
-        if (a.date < b.date) {
-          return -1;
-        }
-        if (a.date > b.date) {
-          return 1;
-        }
-        return 0;
-      });
-
-      console.log("JSON", data);
-      return data;
-    },
     monthName(datetime) {
       return ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
         "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
@@ -90,6 +70,27 @@ export default {
   },
 
   data() {
+
+    template.date = new Date(template.year, template.month);
+    template.events.forEach(element => {
+      element.date = new Date(template.year, template.month, element.day, element.hour, element.minutes, 0, 0);
+      element.closed = element.date < new Date();
+    });
+
+    template.events.sort(function (a, b) {
+
+      if (a.date < b.date) {
+        return -1;
+      }
+      if (a.date > b.date) {
+        return 1;
+      }
+      return 0;
+    });
+
+    console.log("JSON", template);
+
+
     return {
       calendarioTemplate: 0,
       form: {
