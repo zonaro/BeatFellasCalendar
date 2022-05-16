@@ -97,7 +97,7 @@ export default {
         width: 100,
         ratio: "ratio-1x1",
       },
-      template: fixData(template),
+      template: template,
     };
   },
 };
