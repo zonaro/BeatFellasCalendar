@@ -16,7 +16,7 @@
             "day": 2,
             "hour": 16,
             "minutes": 0,
-            "type": "Fechado"
+            "type": "fechado"
         },
         {
             "title": "Beatmaster + Taboom",
@@ -24,7 +24,7 @@
             "day": 11,
             "hour": 16,
             "minutes": 0,
-            "type": "ONLINE",
+            "type": "online",
             "price": "gratuito"
         },
         {
@@ -33,7 +33,7 @@
             "day": 9,
             "hour": 16,
             "minutes": 0,
-            "type": "Presencial",
+            "type": "presencial",
             "price": "gratuito"
         },
         {
@@ -42,7 +42,7 @@
             "day": 10,
             "hour": 16,
             "minutes": 0,
-            "type": "ONLINE",
+            "type": "online",
             "price": "pago"
         }
     ]
