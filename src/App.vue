@@ -5,12 +5,7 @@
         <form>
           <div class="form-group mb-3">
             <label for="selectRatio">Tipo de Calendário</label>
-            <select
-              id="selectRatio"
-              class="form-control"
-              v-model="form.ratio"
-              @change="generateTemplate"
-            >
+            <select id="selectRatio" class="form-control" v-model="form.ratio" @change="generateTemplate">
               <option disabled selected>Selecione o aspect ratio</option>
               <option value="ratio-1x1">1x1 (Quadrado, Feed)</option>
               <option value="ratio-9x16">9x16 (Retangulo Vertical, Stories)</option>
@@ -18,23 +13,10 @@
           </div>
           <div class="form-group mb-3">
             <label for="inputWidth">Largura (em %)</label>
-            <input
-              min="30"
-              max="100"
-              type="scroll"
-              class="form-control"
-              id="inputWidth"
-              aria-describedby="widthHelp"
-              placeholder="Digite a largura do template"
-              v-model="form.width"
-              @change="generateTemplate"
-            />
+            <input min="30" max="100" type="range" class="form-control" id="inputWidth" aria-describedby="widthHelp"
+              placeholder="Digite a largura do template" v-model="form.width" @change="generateTemplate" />
           </div>
-          <button
-            type="button"
-            class="btn btn-primary"
-            @click="generateTemplate"
-          >
+          <button type="button" class="btn btn-primary" @click="generateTemplate">
             Reiniciar Template
           </button>
         </form>
@@ -42,12 +24,7 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <CalendarioTemplate
-          :template="template"
-          :ratio="form.ratio"
-          :style="ratioWidth"
-          :key="calendarioTemplate"
-        />
+        <CalendarioTemplate :template="template" :ratio="form.ratio" :style="ratioWidth" :key="calendarioTemplate" />
       </div>
     </div>
   </div>
