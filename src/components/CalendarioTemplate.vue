@@ -146,11 +146,12 @@ header h1 {
 .event-closed {
   color: #ffff00;
   opacity: 0.25;
+  text-decoration: line-through;
+
 }
 
 .event-item:not(.event-closed) {
   color: #ffffff;
-  text-decoration: line-through;
 }
 
 .event-item:not(.event-closed) .event-day {
