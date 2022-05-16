@@ -23,7 +23,7 @@
               setLineHeight: true,
             }">{{ ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro",
     "Novembro", "Dezembro"][template.month - 1]
-}}</span>
+}}/{{template.year}}</span>
           </div>
         </aside>
         <section class="flex-grow-1 ms-4">
