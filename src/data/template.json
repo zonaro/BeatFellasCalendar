@@ -12,7 +12,7 @@
     "events": [
         {
             "title": "podcast - comédia solta",
-            "info": "mansão maromba - 16:00h",
+            "location": "mansão maromba",
             "day": 2,
             "hour": 16,
             "minutes": 0,
@@ -20,7 +20,7 @@
         },
         {
             "title": "Beatmaster + Taboom",
-            "info": "Aplicativo Taboom - 16:00h",
+            "location": "Aplicativo Taboom",
             "day": 11,
             "hour": 16,
             "minutes": 0,
@@ -29,7 +29,7 @@
         },
         {
             "title": "cavepool - show flip (part. mautari)",
-            "info": "Av. Eliseu de Almeida, 984 -  São Paulo - SP - 21:00h",
+            "location": "Av. Eliseu de Almeida, 984 -  São Paulo - SP",
             "day": 9,
             "hour": 16,
             "minutes": 0,
@@ -38,7 +38,7 @@
         },
         {
             "title": "Beatmaster + Taboom",
-            "info": "Aplicativo Taboom - 16:00h",
+            "location": "Aplicativo Taboom",
             "day": 10,
             "hour": 16,
             "minutes": 0,
