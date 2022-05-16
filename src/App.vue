@@ -70,6 +70,14 @@ export default {
     template.events.forEach(element => {
       element.date = new Date(template.year, template.month - 1, element.day, element.hour, element.minutes, 0, 0);
       element.closed = element.date < new Date();
+      element.type = (element.type || 'online').toString().toLowerCase();
+      element.price = (element.price || 'Gratuito')
+      if (!isNaN(element.price)) {
+        element.price = `R$ ${element.price}`
+      }
+      if (element.type == 'fechado') {
+        element.price = '';
+      }
     });
 
     template.events.sort(function (a, b) {

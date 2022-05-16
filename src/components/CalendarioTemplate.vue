@@ -37,7 +37,7 @@
                   event.day.toString().padStart(2, "0")
               }}</span>
               <p class="event-data flex-grow-1 m-0">
-                <span class="event-type d-block">{{ event.type }} - {{ event.price || 'Gratuito' }}</span>
+                <span class="event-type d-block">{{ event.type }} - {{ event.price }}</span>
                 <span class="event-title d-block">{{ event.title }}</span>
                 <span class="event-info d-block">{{ event.location || event.app }} - {{
                     event.hour.toString().padStart(2, "0")
@@ -155,7 +155,7 @@ header h1 {
 [data-closed='true'] {
   opacity: 0.25;
   text-decoration: line-through;
-  color:gray;
+  color: gray;
 }
 
 .event-item:not([data-closed='true']) {
