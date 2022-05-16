@@ -152,16 +152,17 @@ header h1 {
   min-height: 100%;
 }
 
-[date-closed='true'] {
+[data-closed='true'] {
   opacity: 0.25;
   text-decoration: line-through;
+  color:gray;
 }
 
-.event-item:not([date-closed='true']) {
+.event-item:not([data-closed='true']) {
   color: #ffffff;
 }
 
-.event-item:not([date-closed='true']) .event-day {
+.event-item:not([data-closed='true']) .event-day {
   color: #ffff00;
 }
 
