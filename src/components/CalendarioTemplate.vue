@@ -58,6 +58,7 @@ export default {
     this.template.date = new Date(template.year, template.month, 01)
     this.template.events.forEach(element => {
       element.date = new Date(template.year, template.month, element.day, element.hour, element.minutes);
+      element.closed = element.date < new Date();
     });
 
     this.template.events.sort(function (a, b) {
