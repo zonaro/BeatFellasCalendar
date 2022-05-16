@@ -4,7 +4,7 @@
       <div class="col-4">
         <form>
           <div class="form-group mb-3">
-            <label for="selectRatio">Aspect Ratio</label>
+            <label for="selectRatio">Tipo de Calendário</label>
             <select
               id="selectRatio"
               class="form-control"
