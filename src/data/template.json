@@ -8,7 +8,8 @@
         "gradientBegin": "#00007d",
         "gradientEnd": "#0d1a20"
     },
-    "events": [{
+    "events": [
+        {
             "style": "closed",
             "title": "podcast - comédia solta",
             "info": "mansão maromba - 16:00h",
