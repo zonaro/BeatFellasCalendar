@@ -16,7 +16,7 @@
       </header>
       <main class="d-flex justify-content-center mb-4 mx-auto px-5 overflow-hidden"
         :class="ratio === 'ratio-1x1' ? '' : 'flex-column-reverse'" style="width: 100%">
-        <aside class="text-aside bf-yellow-color py-5">
+        <aside class="text-aside monthname bf-yellow-color py-5">
           <div>
             <span v-fit-text="{
               byHeight: ratio === 'ratio-1x1' ? true : false,
@@ -194,5 +194,9 @@ header h1 {
 
 .event-info {
   font-family: "GlacialIndifference";
+}
+
+.monthname{
+  text-transform: uppercase;
 }
 </style>
