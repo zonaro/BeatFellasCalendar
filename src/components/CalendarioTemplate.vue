@@ -1,10 +1,7 @@
 <template>
   <div :class="'ratio ' + ratio">
     <div class="d-grid text-center pb-3" :style="templateBackground">
-      <div
-        class="position-absolute background-overlay"
-        :style="templateBackgroundOverlay"
-      ></div>
+      <div class="position-absolute background-overlay" :style="templateBackgroundOverlay"></div>
       <header class="p-4" :style="headerBackgroundOverlay">
         <div>
           <h2 class="mb-0" v-fit-text="{ setLineHeight: true }">
@@ -12,56 +9,28 @@
           </h2>
         </div>
         <div class="w-50 mx-auto">
-          <h1
-            class="mb-0 skewx"
-            v-fit-text="{ setLineHeight: true, withMarginTop: true }"
-          >
+          <h1 class="mb-0 skewx" v-fit-text="{ setLineHeight: true, withMarginTop: true }">
             {{ template.title }}
           </h1>
         </div>
       </header>
-      <main
-        class="d-flex justify-content-center mb-4 mx-auto px-5 overflow-hidden"
-        :class="ratio === 'ratio-1x1' ? '' : 'flex-column-reverse'"
-        style="width: 100%"
-      >
+      <main class="d-flex justify-content-center mb-4 mx-auto px-5 overflow-hidden"
+        :class="ratio === 'ratio-1x1' ? '' : 'flex-column-reverse'" style="width: 100%">
         <aside class="text-aside bf-yellow-color py-5">
           <div>
-            <span
-              v-fit-text="{
-                byHeight: ratio === 'ratio-1x1' ? true : false,
-                setLineHeight: true,
-              }"
-              >{{ template.date }}</span
-            >
+            <span v-fit-text="{
+              byHeight: ratio === 'ratio-1x1' ? true : false,
+              setLineHeight: true,
+            }">{{ template.date }}</span>
           </div>
         </aside>
         <section class="flex-grow-1 ms-4">
-          <ul
-            class="event-list list-group justify-content-center"
-            v-fit-list="{
-              numberOfItems: Object.keys(this.template.events).length,
-            }"
-          >
-            <li
-              v-for="event in template.events"
-              :key="event"
-              :class="'event-' + event.style"
-              class="
-                event-item
-                list-unstyled
-                d-flex
-                align-items-center
-                justify-content-center
-                text-start
-                mb-2
-              "
-            >
-              <span
-                class="event-day skewx"
-                style="font-family: 'Days One', sans-serif"
-                >{{ event.day }}</span
-              >
+          <ul class="event-list list-group justify-content-center" v-fit-list="{
+            numberOfItems: Object.keys(this.template.events).length,
+          }">
+            <li v-for="event in template.events" :key="event" :class="'event-' + event.style"
+              class="event-item list-unstyled d-flex align-items-center justify-content-center text-start mb-2">
+              <span class="event-day skewx" style="font-family: 'Days One', sans-serif">{{ event.day }}</span>
               <p class="event-data flex-grow-1 m-0">
                 <span class="event-type d-block">{{ event.type }}</span>
                 <span class="event-title d-block">{{ event.title }}</span>
@@ -72,11 +41,7 @@
         </section>
       </main>
       <footer class="pb-4 px-5">
-        <img
-          :src="require('../assets/' + template.logoBeatfellas)"
-          alt="BeatFellas Logo"
-          class="w-50"
-        />
+        <img :src="require('../assets/' + template.logoBeatfellas)" alt="BeatFellas Logo" class="w-50" />
       </footer>
     </div>
   </div>
@@ -128,35 +93,43 @@ export default {
 body {
   font-family: "Archivo Black", sans-serif;
 }
+
 header h2 {
   text-transform: uppercase;
   color: #ffff00;
   filter: invert(1);
 }
+
 header h1 {
   font-size: 4rem;
   margin-top: -2rem;
 }
+
 .ratio-1x1 .text-aside {
   transform: rotate(180deg);
   writing-mode: vertical-lr;
   text-orientation: mixed;
 }
+
 .text-aside {
   font-family: "Days One", sans-serif;
 }
+
 .bf-yellow-color {
   color: #ffff00;
 }
+
 .background-overlay {
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
-.background-overlay ~ * {
+
+.background-overlay~* {
   z-index: 1;
 }
+
 .skewx {
   -moz-transform: skewx(10deg);
   -webkit-transform: skewx(10deg);
@@ -164,43 +137,55 @@ header h1 {
   -ms-transform: skewx(10deg);
   transform: skewx(10deg);
 }
+
 .event-list {
   margin-bottom: -0.5rem;
   min-height: 100%;
 }
+
 .event-closed {
   color: #ffff00;
   opacity: 0.25;
 }
+
 .event-item:not(.event-closed) {
   color: #ffffff;
 }
+
 .event-item:not(.event-closed) .event-day {
   color: #ffff00;
 }
+
 .event-purple .event-type {
   color: #ff00ff;
 }
+
 .event-green .event-type {
   color: #00ff00;
 }
+
 .event-red .event-type {
   color: #ff0000;
 }
+
 .event-day {
   margin-right: 0.75rem;
   text-align: right;
 }
+
 .event-data {
   text-transform: uppercase;
 }
+
 .event-type {
   font-family: "Archivo Black", sans-serif;
 }
+
 .event-title {
   font-family: "Baloo", sans-serif;
   letter-spacing: 0;
 }
+
 .event-info {
   font-family: "GlacialIndifference";
 }

@@ -12,8 +12,8 @@
               @change="generateTemplate"
             >
               <option disabled selected>Selecione o aspect ratio</option>
-              <option value="ratio-1x1">1x1</option>
-              <option value="ratio-9x16">9x16</option>
+              <option value="ratio-1x1">1x1 (Quadrado, Feed)</option>
+              <option value="ratio-9x16">9x16 (Retangulo Vertical, Stories)</option>
             </select>
           </div>
           <div class="form-group mb-3">
@@ -21,7 +21,7 @@
             <input
               min="30"
               max="100"
-              type="number"
+              type="scroll"
               class="form-control"
               id="inputWidth"
               aria-describedby="widthHelp"
