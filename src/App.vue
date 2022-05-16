@@ -49,6 +49,12 @@ export default {
   },
 
   methods: {
+    monthName(datetime) {
+      return ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+        "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+      ][datetime.getMonth()];     
+    }
+    ,
     generateTemplate() {
       this.calendarioTemplate += 1;
     },
