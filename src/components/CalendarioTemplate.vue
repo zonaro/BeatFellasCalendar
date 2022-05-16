@@ -21,7 +21,9 @@
             <span v-fit-text="{
               byHeight: ratio === 'ratio-1x1' ? true : false,
               setLineHeight: true,
-            }">{{ monthName(template.date) }}</span>
+            }">{{ ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro",
+    "Novembro", "Dezembro"][template.month - 1]
+}}</span>
           </div>
         </aside>
         <section class="flex-grow-1 ms-4">
@@ -55,7 +57,7 @@ export default {
 
   data() {
 
-    
+
     return {
       templateBackground: {
         "background-image":
