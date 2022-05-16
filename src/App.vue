@@ -49,7 +49,7 @@ export default {
   },
 
   methods: {
-    
+
     generateTemplate() {
       this.calendarioTemplate += 1;
     },
@@ -66,8 +66,9 @@ export default {
   data() {
 
     template.date = new Date(template.year, template.month);
+
     template.events.forEach(element => {
-      element.date = new Date(template.year, template.month, element.day, element.hour, element.minutes, 0, 0);
+      element.date = new Date(template.year, template.month - 1, element.day, element.hour, element.minutes, 0, 0);
       element.closed = element.date < new Date();
     });
 
