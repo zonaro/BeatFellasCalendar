@@ -32,7 +32,7 @@
           }">
             <li v-for="event in template.events" :key="event" :class="'event-' + event.type"
               class="event-item list-unstyled d-flex align-items-center justify-content-center text-start mb-2">
-              <span class="event-day skewx" style="font-family: 'Days One', sans-serif">{{ event.day }}</span>
+              <span class="event-day skewx" style="font-family: 'Days One', sans-serif">{{ event.day.toString().padStart(2,"0") }}</span>
               <p class="event-data flex-grow-1 m-0">
                 <span class="event-type d-block">{{ event.type }} {{ event.price || 'Gratuito' }}</span>
                 <span class="event-title d-block">{{ event.title }}</span>
