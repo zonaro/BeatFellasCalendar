@@ -25,14 +25,29 @@
         :class="ratio === 'ratio-1x1' ? '' : 'flex-column'"
         style="width: 100%"
       >
-        <aside class="text-aside bf-yellow-color py-5">
+        <aside class="text-aside monthname bf-yellow-color py-5">
           <div>
             <span
               v-fit-text="{
                 byHeight: ratio === 'ratio-1x1' ? true : false,
                 setLineHeight: true,
               }"
-              >{{ template.date }}</span
+              >{{
+                [
+                  "Janeiro",
+                  "Fevereiro",
+                  "Março",
+                  "Abril",
+                  "Maio",
+                  "Junho",
+                  "Julho",
+                  "Agosto",
+                  "Setembro",
+                  "Outubro",
+                  "Novembro",
+                  "Dezembro",
+                ][template.month - 1]
+              }}/{{ template.year }}</span
             >
           </div>
         </aside>
@@ -46,7 +61,8 @@
             <li
               v-for="event in template.events"
               :key="event"
-              :class="'event-' + event.style"
+              :data-closed="event.closed"
+              :class="'event-' + event.type.toString().toLowerCase()"
               class="
                 event-item
                 list-unstyled
@@ -60,12 +76,19 @@
               <span
                 class="event-day skewx"
                 style="font-family: 'Days One', sans-serif"
-                >{{ event.day }}</span
+                >{{ event.day.toString().padStart(2, "0") }}</span
               >
               <p class="event-data flex-grow-1 m-0">
-                <span class="event-type d-block">{{ event.type }}</span>
+                <span class="event-type d-block"
+                  >{{ event.type }} - {{ event.price }}</span
+                >
                 <span class="event-title d-block">{{ event.title }}</span>
-                <span class="event-info d-block">{{ event.info }}</span>
+                <span class="event-info d-block"
+                  >{{ event.location || event.app }} -
+                  {{ event.hour.toString().padStart(2, "0") }}:{{
+                    event.minutes.toString().padStart(2, "0")
+                  }}H</span
+                >
               </p>
             </li>
           </ul>
@@ -136,35 +159,43 @@ export default {
 body {
   font-family: "Archivo Black", sans-serif;
 }
+
 header h2 {
   text-transform: uppercase;
   color: #ffff00;
   filter: invert(1);
 }
+
 header h1 {
   font-size: 4rem;
   margin-top: -2rem;
 }
+
 .ratio-1x1 .text-aside {
   transform: rotate(180deg);
   writing-mode: vertical-lr;
   text-orientation: mixed;
 }
+
 .text-aside {
   font-family: "Days One", sans-serif;
 }
+
 .bf-yellow-color {
   color: #ffff00;
 }
+
 .background-overlay {
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
+
 .background-overlay ~ * {
   z-index: 1;
 }
+
 .skewx {
   -moz-transform: skewx(10deg);
   -webkit-transform: skewx(10deg);
@@ -172,42 +203,62 @@ header h1 {
   -ms-transform: skewx(10deg);
   transform: skewx(10deg);
 }
+
 .event-list {
   margin-bottom: -0.5rem;
   min-height: 100%;
 }
-.event-closed {
-  color: #ffff00;
+
+[data-closed="true"] {
   opacity: 0.25;
+  text-decoration: line-through;
+  color: gray;
 }
-.event-item:not(.event-closed) {
+
+.event-item:not([data-closed="true"]) {
   color: #ffffff;
 }
-.event-item:not(.event-closed) .event-day {
+
+.event-item:not([data-closed="true"]) .event-day {
   color: #ffff00;
 }
-.event-purple .event-type {
+
+.event-presencial .event-type {
   color: #ff00ff;
 }
-.event-green .event-type {
+
+.event-online .event-type {
   color: #00ff00;
 }
+
+.event-fechado .event-type {
+  color: #ff0000;
+}
+
 .event-day {
   margin-right: 0.75rem;
   text-align: right;
 }
+
 .event-data {
   text-transform: uppercase;
 }
+
 .event-type {
   font-family: "Archivo Black", sans-serif;
 }
+
 .event-title {
   font-family: "Baloo", sans-serif;
   letter-spacing: 0;
 }
+
 .event-info {
   font-family: "GlacialIndifference";
+}
+
+.monthname {
+  text-transform: uppercase;
 }
 
 .gui-instagram {
