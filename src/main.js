@@ -80,13 +80,7 @@ app.directive("fitList", async(el, binding) => {
             span.style.lineHeight = "0px";
         });
 
-        console.log(li);
-        console.log('limits: ', li.clientHeight, (limit - 8), li.clientWidth, limitWidth);
-        console.log('while: ', li.clientHeight < (limit - 8), li.clientWidth <= limitWidth);
-
         while (li.clientHeight < (limit - 8) && li.clientWidth <= limitWidth) {
-            console.log('clientHeight and limit', li.clientHeight, limit - 8)
-            console.log('clientWidth and limit', li.clientWidth, limitWidth)
             li.querySelectorAll('span').forEach((span) => {
                 if (span.className.includes('event-day'))
                     fontSize = parseInt(window.getComputedStyle(span).fontSize) + 12;
@@ -99,11 +93,9 @@ app.directive("fitList", async(el, binding) => {
                 else
                     fontSize = parseInt(window.getComputedStyle(span).fontSize) + 1;
 
-                console.log('fontSize', fontSize)
                 span.style.fontSize = fontSize + "px";
                 span.style.lineHeight = fontSize + "px";
             });
-            console.log(' ')
         }
 
         li.querySelectorAll('span').forEach((span) => {
