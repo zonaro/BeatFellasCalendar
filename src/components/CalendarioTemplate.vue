@@ -28,8 +28,7 @@
           <ul class="event-list list-group justify-content-center" v-fit-list="{
             numberOfItems: Object.keys(this.template.events).length,
           }">
-            <li v-for="event in template.events" :key="event"
-              :class="'event-' + event.type"
+            <li v-for="event in template.events" :key="event" :class="'event-' + event.type"
               class="event-item list-unstyled d-flex align-items-center justify-content-center text-start mb-2">
               <span class="event-day skewx" style="font-family: 'Days One', sans-serif">{{ event.day }}</span>
               <p class="event-data flex-grow-1 m-0">
@@ -59,6 +58,17 @@ export default {
     this.template.date = new Date(template.year, template.month, 01)
     this.template.events.forEach(element => {
       element.date = new Date(template.year, template.month, element.day, element.hour, element.minutes);
+    });
+
+    this.template.events.sort(function (a, b) {
+
+      if (a.date < b.date) {
+        return -1;
+      }
+      if (a.date > b.date) {
+        return 1;
+      }
+      return 0;
     });
 
     console.log("JSON", this.template);
