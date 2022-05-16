@@ -153,11 +153,11 @@ header h1 {
 
 }
 
-.event-item:not(.event-closed) {
+.event-item:not([date-closed='true']) {
   color: #ffffff;
 }
 
-.event-item:not(.event-closed) .event-day {
+.event-item:not([date-closed='true']) .event-day {
   color: #ffff00;
 }
 
