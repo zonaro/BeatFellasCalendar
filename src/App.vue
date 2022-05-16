@@ -67,16 +67,16 @@ export default {
 
     template.date = new Date(template.year, template.month);
 
-    template.events.forEach(element => {
-      element.date = new Date(template.year, template.month - 1, element.day, element.hour, element.minutes, 0, 0);
-      element.closed = element.date < new Date();
-      element.type = (element.type || 'online').toString().toLowerCase();
-      element.price = (element.price || 'Gratuito')
-      if (!isNaN(element.price)) {
-        element.price = `R$ ${element.price}`
+    template.events.forEach(event => {
+      event.date = new Date(template.year, template.month - 1, event.day, event.hour, event.minutes, 0, 0);
+      event.closed = event.date < new Date();
+      event.type = (event.type || 'online').toString().toLowerCase();
+      event.price = (event.price || 'Gratuito')
+      if (!isNaN(event.price)) {
+        event.price = `R$ ${event.price}`
       }
-      if (element.type == 'fechado') {
-        element.price = '';
+      if (event.type == 'fechado') {
+        event.price = '';
       }
     });
 
