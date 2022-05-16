@@ -55,24 +55,7 @@ export default {
 
   data() {
 
-    this.template.date = new Date(template.year, template.month);
-    this.template.events.forEach(element => {
-      element.date = new Date(template.year, template.month, element.day, element.hour, element.minutes,0,0);
-      element.closed = element.date < new Date();
-    });
-
-    this.template.events.sort(function (a, b) {
-
-      if (a.date < b.date) {
-        return -1;
-      }
-      if (a.date > b.date) {
-        return 1;
-      }
-      return 0;
-    });
-
-    console.log("JSON", this.template);
+    
     return {
       templateBackground: {
         "background-image":
