@@ -55,9 +55,9 @@ export default {
 
   data() {
 
-    this.template.date = new Date(template.year, template.month, 01)
+    this.template.date = new Date(template.year, template.month);
     this.template.events.forEach(element => {
-      element.date = new Date(template.year, template.month, element.day, element.hour, element.minutes);
+      element.date = new Date(template.year, template.month, element.day, element.hour, element.minutes,0,0);
       element.closed = element.date < new Date();
     });
 

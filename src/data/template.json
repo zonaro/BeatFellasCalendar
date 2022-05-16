@@ -1,8 +1,8 @@
 {
     "title": "AGENDA",
     "titleOverlay": "#123beatboxnacional",
-    "month": "04",
-    "year": "2022",
+    "month": 4,
+    "year": 2022,
     "logoBeatfellas": "logo-beatfellas.png",
     "background": {
         "image": "bg-beatfellas-april-2022.png",
@@ -13,35 +13,35 @@
         {
             "title": "podcast - comédia solta",
             "info": "mansão maromba - 16:00h",
-            "day": "02",
-            "hour": "16",
-            "minutes": "00",
+            "day": 2,
+            "hour": 16,
+            "minutes": 0,
             "type": "Fechado"
         },
         {
             "title": "Beatmaster + Taboom",
             "info": "Aplicativo Taboom - 16:00h",
-            "day": "11",
-            "hour": "16",
-            "minutes": "00",
+            "day": 11,
+            "hour": 16,
+            "minutes": 0,
             "type": "ONLINE",
             "price": "gratuito"
         },
         {
             "title": "cavepool - show flip (part. mautari)",
             "info": "Av. Eliseu de Almeida, 984 -  São Paulo - SP - 21:00h",
-            "day": "09",
-            "hour": "16",
-            "minutes": "00",
+            "day": 9,
+            "hour": 16,
+            "minutes": 0,
             "type": "Presencial",
             "price": "gratuito"
         },
         {
             "title": "Beatmaster + Taboom",
             "info": "Aplicativo Taboom - 16:00h",
-            "day": "10",
-            "hour": "16",
-            "minutes": "00",
+            "day": 10,
+            "hour": 16,
+            "minutes": 0,
             "type": "ONLINE",
             "price": "pago"
         }
