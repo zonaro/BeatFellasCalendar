@@ -23,16 +23,18 @@
               setLineHeight: true,
             }">{{ ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro",
     "Novembro", "Dezembro"][template.month - 1]
-}}/{{template.year}}</span>
+}}/{{ template.year }}</span>
           </div>
         </aside>
         <section class="flex-grow-1 ms-4">
           <ul class="event-list list-group justify-content-center" v-fit-list="{
             numberOfItems: Object.keys(this.template.events).length,
           }">
-            <li v-for="event in template.events" :key="event" :data-closed="event.closed" :class="'event-' + event.type"
+            <li v-for="event in template.events" :key="event" :data-closed="event.closed" :class="'event-' + event.type.toString().toLowerCase()"
               class="event-item list-unstyled d-flex align-items-center justify-content-center text-start mb-2">
-              <span class="event-day skewx" style="font-family: 'Days One', sans-serif">{{ event.day.toString().padStart(2,"0") }}</span>
+              <span class="event-day skewx" style="font-family: 'Days One', sans-serif">{{
+                  event.day.toString().padStart(2, "0")
+              }}</span>
               <p class="event-data flex-grow-1 m-0">
                 <span class="event-type d-block">{{ event.type }} {{ event.price || 'Gratuito' }}</span>
                 <span class="event-title d-block">{{ event.title }}</span>
@@ -150,7 +152,6 @@ header h1 {
 [date-closed='true'] {
   opacity: 0.25;
   text-decoration: line-through;
-
 }
 
 .event-item:not([date-closed='true']) {
@@ -195,7 +196,7 @@ header h1 {
   font-family: "GlacialIndifference";
 }
 
-.monthname{
+.monthname {
   text-transform: uppercase;
 }
 </style>
