@@ -210,7 +210,7 @@ header h1 {
 }
 
 [data-closed="true"] {
-  opacity: 0.25;
+  opacity: 0.55;
   text-decoration: line-through;
   color: gray;
 }
