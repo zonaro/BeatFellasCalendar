@@ -30,11 +30,15 @@
     <script>
 
         window.onload = function () {
-            html2canvas(document.querySelector("#maincontent")).then(canvas => {
-                let img = canvas.toDataURL("image/png");
-                console.log(img)
-                document.getElementById("link_download").setAttribute("href", img);
-            });
+            setTimeout(function () {
+
+
+                html2canvas(document.querySelector("#maincontent")).then(canvas => {
+                    let img = canvas.toDataURL("image/png");
+                    console.log(img)
+                    document.getElementById("link_download").setAttribute("href", img);
+                });
+            }, 2000);
         }
     </script>
 </body>
