@@ -29,7 +29,8 @@
             html2canvas(document.querySelector("#maincontent")).then(canvas => {
                 let img = canvas.toDataURL("image/png");
                 console.log(img)
-                window.open(img)
+                let janela = window.open("about:blank")
+                janela.location.href = img;
             });
         }
     </script>
