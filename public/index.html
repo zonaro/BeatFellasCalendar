@@ -25,8 +25,18 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
 
- 
+
     <a id="link_download" download href="" class="btn btn-primary">Salvar Imagem</a>
+    <script>
+
+        window.onload = function () {
+            html2canvas(document.querySelector("#maincontent")).then(canvas => {
+                let img = canvas.toDataURL("image/png");
+                console.log(img)
+                document.getElementById("link_download").setAttribute("href", img);
+            });
+        }
+    </script>
 </body>
 
 </html>
