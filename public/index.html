@@ -27,11 +27,13 @@
     <script>
         function saveImage() {
             html2canvas(document.querySelector("#maincontent")).then(canvas => {
-               window.open(canvas.toDataURL("image/png"))
+                let img = canvas.toDataURL("image/png");
+                console.log(img)
+                window.open(img)
             });
         }
     </script>
-    <button type="button" class="btn btn-primary" onclick="saveImage()"></button>
+    <button type="button" class="btn btn-primary" onclick="saveImage()">Salvar Imagem</button>
 </body>
 
 </html>
