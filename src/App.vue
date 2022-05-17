@@ -92,7 +92,7 @@ export default {
       return 0;
     });
 
-    console.log("JSON", template);
+    console.log("Template Data", template);
 
 
     return {
