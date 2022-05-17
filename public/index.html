@@ -29,7 +29,7 @@
     <a id="link_download" download href="" class="btn btn-primary" on>Salvar Imagem</a>
     <script>
 
-        window.oncontextmenu = function (e) {
+        window.oncontextmenu = function render(e) {
             e.preventDefault();
             setTimeout(function () {
                 html2canvas(document.querySelector("#maincontent")).then(canvas => {
