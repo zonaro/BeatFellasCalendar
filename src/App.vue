@@ -22,7 +22,7 @@
         </form>
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="maincontent">
       <div class="col-12">
         <CalendarioTemplate :template="template" :ratio="form.ratio" :style="ratioWidth" :key="calendarioTemplate" />
       </div>
