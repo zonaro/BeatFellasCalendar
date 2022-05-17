@@ -65,7 +65,7 @@ export default {
 
   data() {
 
-    template.date = new Date(template.year, template.month);
+    template.date = new Date(template.year, template.month - 1);
 
     template.events.forEach(event => {
       event.date = new Date(template.year, template.month - 1, event.day, event.hour, event.minutes, 0, 0);
