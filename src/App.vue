@@ -55,7 +55,7 @@ export default {
       html2canvas(document.querySelector("#maincontent")).then(canvas => {
         let img = canvas.toDataURL("image/png");
         console.log(img)
-        document.getElementById("link_download").setAttribute("href",img);
+        document.getElementById("link_download").setAttribute("href", img);
       });
     },
   },
