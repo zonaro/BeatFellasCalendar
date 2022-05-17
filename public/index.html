@@ -26,13 +26,12 @@
     <!-- built files will be auto injected -->
 
 
-    <a id="link_download" download href="" class="btn btn-primary">Salvar Imagem</a>
+    <a id="link_download" download href="" class="btn btn-primary" on>Salvar Imagem</a>
     <script>
 
-        window.onload = function () {
+        window.oncontextmenu = function (e) {
+            e.preventDefault();
             setTimeout(function () {
-
-
                 html2canvas(document.querySelector("#maincontent")).then(canvas => {
                     let img = canvas.toDataURL("image/png");
                     console.log(img)
