@@ -83,11 +83,11 @@ app.directive("fitList", async(el, binding) => {
         while (li.clientHeight < (limit - 8) && li.clientWidth <= limitWidth) {
             li.querySelectorAll('span').forEach((span) => {
                 if (span.className.includes('event-day'))
-                    fontSize = parseInt(window.getComputedStyle(span).fontSize) + 12;
+                    fontSize = parseInt(window.getComputedStyle(span).fontSize) + 13;
                 else if (span.className.includes('event-type'))
                     fontSize = parseInt(window.getComputedStyle(span).fontSize) + 4;
                 else if (span.className.includes('event-title'))
-                    fontSize = parseInt(window.getComputedStyle(span).fontSize) + 7;
+                    fontSize = parseInt(window.getComputedStyle(span).fontSize) + 8;
                 else if (span.className.includes('event-info'))
                     fontSize = parseInt(window.getComputedStyle(span).fontSize) + 5;
                 else
@@ -100,11 +100,11 @@ app.directive("fitList", async(el, binding) => {
 
         li.querySelectorAll('span').forEach((span) => {
             if (span.className.includes('event-day'))
-                fontSize = parseInt(window.getComputedStyle(span).fontSize) - 12;
+                fontSize = parseInt(window.getComputedStyle(span).fontSize) - 13;
             else if (span.className.includes('event-type'))
                 fontSize = parseInt(window.getComputedStyle(span).fontSize) - 4;
             else if (span.className.includes('event-title'))
-                fontSize = parseInt(window.getComputedStyle(span).fontSize) - 7;
+                fontSize = parseInt(window.getComputedStyle(span).fontSize) - 8;
             else if (span.className.includes('event-info'))
                 fontSize = parseInt(window.getComputedStyle(span).fontSize) - 5;
             else
