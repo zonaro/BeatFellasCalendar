@@ -212,7 +212,7 @@ header h1 {
 }
 
 .event-type {
-  font-family: "Archivo Black", sans-serif;
+  font-family: "Archivo Black", sans-serif; 
 }
 
 .event-title {
