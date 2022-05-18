@@ -70,7 +70,7 @@ export default {
 
     window.template.startDate = new Date(window.template.year, window.template.month - 1);
     window.template.endDate = new Date(window.template.year, window.template.month, 0, 23, 59, 59, 999);
-    
+
     window.template.events.forEach(event => {
       event.date = new Date(window.template.year, window.template.month - 1, event.day, event.hour, event.minutes, 0, 0);
       event.closed = event.date < new Date();
@@ -85,7 +85,7 @@ export default {
     });
 
 
-    window.template.events = window.template.events.filter(function (x) { return x >= window.template.startDate && x <= window.template.endDate })
+    window.template.events = window.template.events.filter(function (x) { return x.date >= window.template.startDate && x.date <= window.template.endDate })
 
     window.template.events.sort(function (a, b) {
 
