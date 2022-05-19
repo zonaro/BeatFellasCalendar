@@ -3,6 +3,22 @@ import {
 } from 'vue'
 import App from './App.vue'
 
+
+window.monthNames = [
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
+  ]
+
 const app = createApp(App)
 
 function sleep(ms) {

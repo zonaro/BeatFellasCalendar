@@ -21,22 +21,7 @@
             <span v-fit-text="{
               byHeight: ratio === 'ratio-1x1' ? true : false,
               setLineHeight: true,
-            }">{{
-    [
-      "Janeiro",
-      "Fevereiro",
-      "Março",
-      "Abril",
-      "Maio",
-      "Junho",
-      "Julho",
-      "Agosto",
-      "Setembro",
-      "Outubro",
-      "Novembro",
-      "Dezembro",
-    ][template.month - 1]
-}}/{{ template.year }}</span>
+            }">{{ window.monthNames[template.month - 1] }}/{{ template.year }}</span>
           </div>
         </aside>
         <section class="flex-grow-1 ms-4">
@@ -44,15 +29,8 @@
             numberOfItems: Object.keys(this.template.events).length,
           }">
             <li v-for="event in template.events" :key="event" :data-closed="event.closed"
-              :class="'event-' + event.type.toString().toLowerCase()" class="
-                event-item
-                list-unstyled
-                d-flex
-                align-items-center
-                justify-content-center
-                text-start
-                mb-2
-              ">
+              :class="'event-' + event.type.toString().toLowerCase()"
+              class="event-item list-unstyled d-flex align-items-center justify-content-center text-start mb-2">
               <span class="event-day skewx" style="font-family: 'Days One', sans-serif">{{
                   event.day.toString().padStart(2, "0")
               }}</span>
@@ -212,7 +190,7 @@ header h1 {
 }
 
 .event-type {
-  font-family: "Archivo Black", sans-serif; 
+  font-family: "Archivo Black", sans-serif;
 }
 
 .event-title {
