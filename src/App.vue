@@ -44,7 +44,7 @@
               v-model="form.width"
               @change="document.querySelector('.lnXdpd').style.zoom=this.value"
             />
-          </div>
+         
           <!-- <button
             type="button"
             class="btn btn-primary"
