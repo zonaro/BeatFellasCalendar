@@ -27,22 +27,21 @@
               class="form-control"
               id="inputWidth"
               aria-describedby="widthHelp"
-             
               v-model="form.width"
               @change="generateTemplate"
             />
           </div>
-           <label for="inputWidth2">Zoom da Lista</label>
-            <input             
-              type="number"
-              class="form-control"
-              id="inputWidth2"
-              aria-describedby="widthHelp"
-           
-              v-model="form.width"
-              onchange="document.querySelector('.event-list').style.zoom=this.value"
-            />
-         
+          <label for="inputWidth2">Zoom da Lista</label>
+          <input
+            type="number"
+            class="form-control"
+            id="inputWidth2"
+            aria-describedby="widthHelp"
+            value="1"
+            v-model="form.width"
+            @change="document.querySelector('.event-list').style.zoom=parseInt(this.value)"
+          />
+
           <!-- <button
             type="button"
             class="btn btn-primary"
