@@ -66,7 +66,7 @@
                     -
                   </span>
                   <span v-if="(event.hour && event.minutes)">
-                    {{ event.hour.toString().padStart(2, "0") : "" }}:{{ event.minutes.toString().padStart(2, "0") }}H
+                    {{ event.hour.toString().padStart(2, "0")  }}:{{ event.minutes.toString().padStart(2, "0") }}H
                   </span>
                 </span>
               </p>
