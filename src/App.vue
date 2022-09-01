@@ -36,8 +36,7 @@
             type="number"
             class="form-control"
             id="inputWidth2"
-            aria-describedby="widthHelp"
-            value="1"
+            aria-describedby="widthHelp"           
             v-model="form.width"
             @change="setZoom"
           />
@@ -93,7 +92,7 @@ export default {
       this.calendarioTemplate += 1;
     },
     setZoom(){
-      v = parseInt(document.querySelector("#inputWidth2").value);
+     let v = parseInt(document.querySelector("#inputWidth2").value);
       console.log("zoom",v);
       document.querySelector('.event-list').style.zoom = v;
     }
