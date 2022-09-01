@@ -32,7 +32,7 @@
               @change="generateTemplate"
             />
           </div>
-           <label for="inputWidth2">Largura (em %)</label>
+           <label for="inputWidth2">Zoom da Lista</label>
             <input
               min="0"
               max="2"
