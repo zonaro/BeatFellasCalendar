@@ -53,16 +53,19 @@
                 text-start
                 mb-2
               ">
-              <span class="event-day skewx" style="font-family: 'Days One', sans-serif">{{
-                  event.day.toString().padStart(2, "0")
-              }}</span>
+              <span class="event-day skewx"
+                style="font-family: 'Days One', sans-serif">{{ event.day.toString().padStart(2, "0") }}</span>
               <p class="event-data flex-grow-1 m-0">
-                <span class="event-type d-block">{{ event.type }} - {{ event.price }}</span>
+                <span class="event-type d-block">{{ event.type }} <span v-if="(event.price && event.type)"> - </span> {{
+                    event.price
+                }}</span>
                 <span class="event-title d-block">{{ event.title }}</span>
                 <span class="event-info d-block">
-                  <span v-if="event.location || event.app"></span>{{ event.location || event.app }} <span
-                    v-if="(event.location || event.app) && (event.hour && event.minutes)"> - </span>
-                  <span v-if="event.hour && event.minutes">
+                  <span v-if="event.location || event.app">{{ event.location || event.app }}</span>
+                  <span v-if="(event.location || event.app) && (event.hour && event.minutes)">
+                    -
+                  </span>
+                  <span v-if="(event.hour && event.minutes)">
                     {{ event.hour.toString().padStart(2, "0") : "" }}:{{ event.minutes.toString().padStart(2, "0") }}H
                   </span>
                 </span>
