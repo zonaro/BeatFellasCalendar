@@ -39,7 +39,7 @@
             aria-describedby="widthHelp"
             value="1"
             v-model="form.width"
-            @change="document.querySelector('.event-list').style.zoom=parseInt(this.value)"
+            @change="setZoom"
           />
 
           <!-- <button
@@ -92,6 +92,11 @@ export default {
     generateTemplate() {
       this.calendarioTemplate += 1;
     },
+    setZoom(){
+      v = parseInt(document.querySelector("#inputWidth2").value);
+      console.log("zoom",v);
+      document.querySelector('.event-list').style.zoom = v;
+    }
   },
 
   computed: {
