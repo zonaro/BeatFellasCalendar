@@ -42,7 +42,7 @@
               aria-describedby="widthHelp"
            
               v-model="form.width"
-              @change="document.querySelector('.lnXdpd').style.zoom=this.value"
+              @change="document.querySelector('.event-list').style.zoom=this.value"
             />
          
           <!-- <button
