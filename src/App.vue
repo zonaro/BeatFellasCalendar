@@ -96,18 +96,17 @@ export default {
     window.template = JSON.parse(localStorage.getItem("template")) || jj;
     localStorage.setItem("template", JSON.stringify(window.template));
 
-      console.log("JSON",window.template);
-
+    console.log("JSON", window.template);
 
     window.template.date = new Date(
-      window.template.year,
-      window.template.month - 1
+      window.template.year || new Date().year,
+      window.template.month || new Date().month + 1 - 1
     );
 
     window.template.events.forEach((event) => {
       event.date = new Date(
-        window.template.year || new Date().year,
-        window.template.month || new Date().month + 1 - 1,
+        window.template.year,
+        window.template.month ,
         event.day || 1,
         event.hour || 0,
         event.minutes || 0,
@@ -121,6 +120,7 @@ export default {
 
       event.type = (event.type || "online").toString().toLowerCase();
       event.price = event.price || "Gratuito";
+      
       if (!isNaN(event.price)) {
         event.price = `R$ ${event.price}`;
       }
@@ -129,7 +129,7 @@ export default {
       }
     });
 
-     window.template.events = window.template.events.sort(function (a, b) {
+    window.template.events = window.template.events.sort(function (a, b) {
       if (a.date < b.date) {
         return -1;
       }
@@ -146,7 +146,7 @@ export default {
       );
     }
     // set json
-    window.j_editor.set( window.template);
+    window.j_editor.set(window.template);
 
     return {
       calendarioTemplate: 0,
