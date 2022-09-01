@@ -77,7 +77,8 @@
             }"
           >
             <template v-for="event in template.events" :key="event">
-              <li v-if="event.disabled ? false : true"
+              <li
+                v-if="event.disabled == false"
                 :data-closed="event.closed"
                 :class="'event-' + event.type.toString().toLowerCase()"
                 class="

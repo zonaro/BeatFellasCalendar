@@ -36,9 +36,9 @@
             type="number"
             class="form-control"
             id="inputWidth2"
-            aria-describedby="widthHelp"           
+            aria-describedby="widthHelp"
             v-model="form.width"
-            @change="setZoom"
+            onchange="fixZoom(this.value)"
           />
 
           <!-- <button
@@ -67,6 +67,12 @@
 <script>
 window.j_editor = null;
 
+window.fixZoom = function(v) {
+  v = v || 2;
+  document.querySelector(".event-list").style.zoom = v;
+  return v;
+}
+
 import "bootstrap/dist/css/bootstrap.min.css";
 // import jsoneditor from "jsoneditor/dist/jsoneditor.js";
 import "jsoneditor/dist/jsoneditor.css";
@@ -91,11 +97,11 @@ export default {
     generateTemplate() {
       this.calendarioTemplate += 1;
     },
-    setZoom(){
-     let v = parseInt(document.querySelector("#inputWidth2").value);
-      console.log("zoom",v);
-      document.querySelector('.event-list').style.zoom = v;
-    }
+    setZoom() {
+      let v = parseInt(document.querySelector("#inputWidth2").value);
+      console.log("zoom", v);
+      window.fixZoom(v);
+    },
   },
 
   computed: {
@@ -130,6 +136,10 @@ export default {
 
       if (typeof event.closed === "undefined") {
         event.closed = event.date < new Date();
+      }
+
+      if (typeof event.disabled === "undefined") {
+        event.disabled = false;
       }
 
       event.type = (event.type || "online").toString().toLowerCase();
