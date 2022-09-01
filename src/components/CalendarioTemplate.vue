@@ -59,10 +59,13 @@
               <p class="event-data flex-grow-1 m-0">
                 <span class="event-type d-block">{{ event.type }} - {{ event.price }}</span>
                 <span class="event-title d-block">{{ event.title }}</span>
-                <span class="event-info d-block">{{ event.location || event.app }} -
-                  {{ event.hour ? event.hour.toString().padStart(2, "0") : "" }}:{{ event.hour && event.minutes ?
-                      event.minutes.toString().padStart(2, "0") : ""
-                  }}H</span>
+                <span class="event-info d-block">
+                  <span v-if="event.location || event.app"></span>{{ event.location || event.app }} <span
+                    v-if="(event.location || event.app) && (event.hour && event.minutes)"> - </span>
+                  <span v-if="event.hour && event.minutes">
+                    {{ event.hour.toString().padStart(2, "0") : "" }}:{{ event.minutes.toString().padStart(2, "0") }}H
+                  </span>
+                </span>
               </p>
             </li>
           </ul>
