@@ -92,11 +92,11 @@ export default {
 
     template.events.forEach((event) => {
       event.date = new Date(
-        template.year,
-        template.month - 1,
-        event.day,
-        event.hour,
-        event.minutes,
+        template.year || (new Date().year),
+        template.month || (new Date().month + 1) - 1,
+        event.day || 1,
+        event.hour || 0,
+        event.minutes || 0,
         0,
         0
       );
