@@ -64,8 +64,8 @@
                   "Novembro",
                   "Dezembro",
                 ][template.month - 1]
-              }}</span
-              >/{{ template.year }}</span
+              }}</span>
+              /{{ template.year }}</span
             >
           </div>
         </aside>
