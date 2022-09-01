@@ -11,7 +11,59 @@
         "gradientEnd": "#0d1a20"
     },
     "events": [
-         
+        {
+            "title": "Oficina",
+            "location": "SESC São José dos Campos",
+            "day": 2,
+            "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Oficina",
+            "location": "SESC São José dos Campos",
+            "day": 3,
+            "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Oficina",
+            "location": "Vale do Anhangabaú",
+            "day": 6,
+            "hour":17,
+            "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Oficina",
+            "location": "SESC São José dos Campos",
+            "day": 4,
+            "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Oficina",
+            "location": "SESC Bom Retiro",
+            "hour":18,
+            "day": 9,
+            "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Oficina",
+            "location": "Vale do Anhangabaú",
+            "hour":17,
+            "day": 13,
+            "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Oficina",
+            "location": "SESC Bom Retiro",
+            "hour":18,
+            "day": 16,
+            "type": "presencial",
+            "price": "gratuito"
+        },
         {
             "title": "Show Navox - ROOM",
             "location": "Jai Club",
