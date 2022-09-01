@@ -107,13 +107,7 @@
                   <template v-if="event.location || event.app">{{
                     event.location || event.app
                   }}</template>
-                  <template
-                    v-if="
-                      (event.location || event.app) &&
-                      event.hour &&
-                      event.minutes
-                    "
-                  >
+                  <template v-if="(event.location || event.app) && event.hour">
                     -
                   </template>
                   <template v-if="event.hour">
