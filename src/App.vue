@@ -115,7 +115,7 @@ export default {
       }
     });
 
-    template.events.sort(function (a, b) {
+    template.events = template.events.sort(function (a, b) {
       if (a.date < b.date) {
         return -1;
       }
