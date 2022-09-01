@@ -99,15 +99,15 @@
               <p class="event-data flex-grow-1 m-0">
                 <span class="event-type d-block"
                   >{{ event.type }}
-                  <span v-if="event.price && event.type"> - </span>
+                  <template v-if="event.price && event.type"> - </template>
                   {{ event.price }}</span
                 >
                 <span class="event-title d-block">{{ event.title }}</span>
                 <span class="event-info d-block">
-                  <span v-if="event.location || event.app">{{
+                  <template v-if="event.location || event.app">{{
                     event.location || event.app
-                  }}</span>
-                  <span
+                  }}</template>
+                  <template
                     v-if="
                       (event.location || event.app) &&
                       event.hour &&
@@ -115,12 +115,12 @@
                     "
                   >
                     -
-                  </span>
-                  <span v-if="event.hour && event.minutes">
+                  </template>
+                  <template v-if="event.hour && event.minutes">
                     {{ event.hour.toString().padStart(2, "0") }}:{{
                       event.minutes.toString().padStart(2, "0")
                     }}H
-                  </span>
+                  </template>
                 </span>
               </p>
             </li>
