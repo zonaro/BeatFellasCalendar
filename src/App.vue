@@ -56,12 +56,12 @@
 </template>
 
 <script>
-        window.j_editor = null;
+window.j_editor = null;
 
 import "bootstrap/dist/css/bootstrap.min.css";
 // import jsoneditor from "jsoneditor/dist/jsoneditor.js";
-  import  "jsoneditor/dist/jsoneditor.css";
-import JSONEditor from 'jsoneditor';
+import "jsoneditor/dist/jsoneditor.css";
+import JSONEditor from "jsoneditor";
 import "jquery/src/jquery.js";
 import "./scss/app.scss";
 import template from "./data/template.json";
@@ -93,12 +93,14 @@ export default {
   },
 
   data() {
-    template.date = new Date(template.year, template.month - 1);
+    window.template = template;
 
-    template.events.forEach((event) => {
+    window.template.date = new Date(template.year, template.month - 1);
+
+    window.template.events.forEach((event) => {
       event.date = new Date(
-        template.year || (new Date().year),
-        template.month || (new Date().month + 1) - 1,
+        window.template.year || new Date().year,
+        window.template.month || new Date().month + 1 - 1,
         event.day || 1,
         event.hour || 0,
         event.minutes || 0,
@@ -120,7 +122,7 @@ export default {
       }
     });
 
-    template.events = template.events.sort(function (a, b) {
+    window.template.events = window.template.events.sort(function (a, b) {
       if (a.date < b.date) {
         return -1;
       }
@@ -130,21 +132,15 @@ export default {
       return 0;
     });
 
-    window.template = template;
-
-            // create the editor
-        const container = document.getElementById("jsoneditor");
-       
-        if(   window.j_editor  == null){
-          console.log("JSON", window.template);
-             window.j_editor  = new JSONEditor(container,{})
-        }
-
-        // set json       
-         window.j_editor .set(window.template)
-
-       
-
+    if (window.j_editor == null) {
+      console.log("JSON", window.template);
+      window.j_editor = new JSONEditor(
+        document.getElementById("jsoneditor"),
+        {}
+      );
+    }
+    // set json
+    window.j_editor.set(window.template);
 
     return {
       calendarioTemplate: 0,
