@@ -127,7 +127,19 @@ export default {
 
     window.template = template;
 
-    console.log("JSON", window.template);
+            // create the editor
+        const container = document.getElementById("jsoneditor")
+        const options = {}
+        if(typeof j_editor ==='undefined'){
+          console.log("JSON", window.template);
+          let j_editor = new JSONEditor(container, options);
+        }
+
+        // set json       
+        j_editor.set(window.template)
+
+       
+
 
     return {
       calendarioTemplate: 0,
