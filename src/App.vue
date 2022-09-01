@@ -33,16 +33,14 @@
             />
           </div>
            <label for="inputWidth2">Zoom da Lista</label>
-            <input
-              min="0"
-              max="2"
-              type="range"
+            <input             
+              type="number"
               class="form-control"
               id="inputWidth2"
               aria-describedby="widthHelp"
            
               v-model="form.width"
-              @change="document.querySelector('.event-list').style.zoom=this.value"
+              onchange="document.querySelector('.event-list').style.zoom=this.value"
             />
          
           <!-- <button
