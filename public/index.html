@@ -19,7 +19,7 @@
 
 <body>
     <div id="jsoneditor" style="width: 400px; height: 400px;"></div>
-    <button id="link_download" onclick="localStorage.setItem('template', JSON.stringify(window.j_editor.get()))"
+    <button id="link_download" onclick="localStorage.setItem('template', JSON.stringify(window.j_editor.get()));location.href=location.href"
         class="btn btn-primary">Recarregar
         dados</button>
     <noscript>
