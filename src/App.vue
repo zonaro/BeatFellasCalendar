@@ -56,7 +56,12 @@
 </template>
 
 <script>
+        window.j_editor = null;
+
 import "bootstrap/dist/css/bootstrap.min.css";
+// import jsoneditor from "jsoneditor/dist/jsoneditor.js";
+  import  "jsoneditor/dist/jsoneditor.css";
+import JSONEditor from 'jsoneditor';
 import "jquery/src/jquery.js";
 import "./scss/app.scss";
 import template from "./data/template.json";
@@ -128,15 +133,15 @@ export default {
     window.template = template;
 
             // create the editor
-        const container = document.getElementById("jsoneditor")
-        const options = {}
-        if(typeof j_editor ==='undefined'){
+        const container = document.getElementById("jsoneditor");
+       
+        if(   window.j_editor  == null){
           console.log("JSON", window.template);
-          let j_editor = new JSONEditor(container, options);
+             window.j_editor  = new JSONEditor(container,{})
         }
 
         // set json       
-        j_editor.set(window.template)
+         window.j_editor .set(window.template)
 
        
 
