@@ -59,6 +59,48 @@
             "day": 16,
             "type": "presencial",
             "price": "gratuito"
+        },
+        {
+            "title": "Show Navox - ROOM",
+            "location": "Jai Club",
+            "day": 17,
+            "hour": 17,
+            "type": "presencial",
+            "price": "R$ 15+"
+        },
+        {
+            "title": "Oficina",
+            "location": "Vale do Anhangabaú",
+            "day": 20,
+            "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Oficina",
+            "location": "SESC Bom Retiro",
+            "day": 23,
+            "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Oficina",
+            "location": "Vale do Anhangabaú",
+            "day": 27,
+            "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Show Corporativo - NAVOX",
+            "day": 27,
+            "type": "fechado",
+            "price": "gratuito"
+        },
+        {
+            "title": "Oficina",
+            "location": "SESC Bom Retiro",
+            "day": 30,
+            "type": "presencial",
+            "price": "gratuito"
         }
     ]
 }
