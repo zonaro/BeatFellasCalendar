@@ -27,18 +27,31 @@
               class="form-control"
               id="inputWidth"
               aria-describedby="widthHelp"
-              placeholder="Digite a largura do template"
+             
               v-model="form.width"
               @change="generateTemplate"
             />
           </div>
-          <button
+           <label for="inputWidth2">Largura (em %)</label>
+            <input
+              min="0"
+              max="2"
+              type="range"
+              class="form-control"
+              id="inputWidth2"
+              aria-describedby="widthHelp"
+           
+              v-model="form.width"
+              @change="document.querySelector('.lnXdpd').style.zoom=this.value"
+            />
+          </div>
+          <!-- <button
             type="button"
             class="btn btn-primary"
             @click="generateTemplate"
           >
             Reiniciar Template
-          </button>
+          </button> -->
         </form>
       </div>
     </div>
@@ -106,7 +119,7 @@ export default {
     window.template.events.forEach((event) => {
       event.date = new Date(
         window.template.year,
-        window.template.month ,
+        window.template.month,
         event.day || 1,
         event.hour || 0,
         event.minutes || 0,
@@ -120,7 +133,7 @@ export default {
 
       event.type = (event.type || "online").toString().toLowerCase();
       event.price = event.price || "Gratuito";
-      
+
       if (!isNaN(event.price)) {
         event.price = `R$ ${event.price}`;
       }
