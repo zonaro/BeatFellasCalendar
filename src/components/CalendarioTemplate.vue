@@ -1,7 +1,10 @@
 <template>
   <div :class="'ratio ' + ratio">
     <div class="d-grid text-center pb-3" :style="templateBackground">
-      <div class="position-absolute background-overlay" :style="templateBackgroundOverlay"></div>
+      <div
+        class="position-absolute background-overlay"
+        :style="templateBackgroundOverlay"
+      ></div>
       <header class="p-4" :style="headerBackgroundOverlay">
         <div>
           <h2 class="mb-0" v-fit-text="{ setLineHeight: true }">
@@ -9,42 +12,76 @@
           </h2>
         </div>
         <div class="w-50 mx-auto">
-          <h1 class="mb-0 skewx" v-fit-text="{ setLineHeight: true, withMarginTop: true }">
+          <h1
+            class="mb-0 skewx"
+            v-fit-text="{ setLineHeight: true, withMarginTop: true }"
+          >
             {{ template.title }}
           </h1>
         </div>
       </header>
-      <main class="d-flex justify-content-center mb-4 mx-auto px-5 overflow-hidden"
-        :class="ratio === 'ratio-1x1' ? '' : 'flex-column'" style="width: 100%">
+      <main
+        class="d-flex justify-content-center mb-4 mx-auto px-5 overflow-hidden"
+        :class="ratio === 'ratio-1x1' ? '' : 'flex-column'"
+        style="width: 100%"
+      >
         <aside class="text-aside monthname bf-yellow-color py-5">
           <div>
-            <span v-fit-text="{
-              byHeight: ratio === 'ratio-1x1' ? true : false,
-              setLineHeight: true,
-            }">{{
-    [
-      "Janeiro",
-      "Fevereiro",
-      "Março",
-      "Abril",
-      "Maio",
-      "Junho",
-      "Julho",
-      "Agosto",
-      "Setembro",
-      "Outubro",
-      "Novembro",
-      "Dezembro",
-    ][template.month - 1]
-}}/{{ template.year }}</span>
+            <span
+              v-fit-text="{
+                byHeight: ratio === 'ratio-1x1' ? true : false,
+                setLineHeight: true,
+              }"
+            >
+              <span v-if="template.shortmonth">{{
+                [
+                  "Jan",
+                  "Fev",
+                  "Mar",
+                  "Abr",
+                  "Mai",
+                  "Jun",
+                  "Jul",
+                  "Ago",
+                  "Set",
+                  "Out",
+                  "Nov",
+                  "Dez",
+                ][template.month - 1]
+              }}</span>
+              <span v-else>{{
+                [
+                  "Janeiro",
+                  "Fevereiro",
+                  "Março",
+                  "Abril",
+                  "Maio",
+                  "Junho",
+                  "Julho",
+                  "Agosto",
+                  "Setembro",
+                  "Outubro",
+                  "Novembro",
+                  "Dezembro",
+                ][template.month - 1]
+              }}</span
+              >/{{ template.year }}</span
+            >
           </div>
         </aside>
         <section class="flex-grow-1 ms-4">
-          <ul class="event-list list-group justify-content-center" v-fit-list="{
-            numberOfItems: Object.keys(this.template.events).length,
-          }">
-            <li v-for="event in template.events" :key="event" :data-closed="event.closed"
-              :class="'event-' + event.type.toString().toLowerCase()" class="
+          <ul
+            class="event-list list-group justify-content-center"
+            v-fit-list="{
+              numberOfItems: Object.keys(this.template.events).length,
+            }"
+          >
+            <li
+              v-for="event in template.events"
+              :key="event"
+              :data-closed="event.closed"
+              :class="'event-' + event.type.toString().toLowerCase()"
+              class="
                 event-item
                 list-unstyled
                 d-flex
@@ -52,21 +89,37 @@
                 justify-content-center
                 text-start
                 mb-2
-              ">
-              <span class="event-day skewx"
-                style="font-family: 'Days One', sans-serif">{{ event.day.toString().padStart(2, "0") }}</span>
+              "
+            >
+              <span
+                class="event-day skewx"
+                style="font-family: 'Days One', sans-serif"
+                >{{ event.day.toString().padStart(2, "0") }}</span
+              >
               <p class="event-data flex-grow-1 m-0">
-                <span class="event-type d-block">{{ event.type }} <span v-if="(event.price && event.type)"> - </span> {{
-                    event.price
-                }}</span>
+                <span class="event-type d-block"
+                  >{{ event.type }}
+                  <span v-if="event.price && event.type"> - </span>
+                  {{ event.price }}</span
+                >
                 <span class="event-title d-block">{{ event.title }}</span>
                 <span class="event-info d-block">
-                  <span v-if="event.location || event.app">{{ event.location || event.app }}</span>
-                  <span v-if="(event.location || event.app) && (event.hour && event.minutes)">
+                  <span v-if="event.location || event.app">{{
+                    event.location || event.app
+                  }}</span>
+                  <span
+                    v-if="
+                      (event.location || event.app) &&
+                      event.hour &&
+                      event.minutes
+                    "
+                  >
                     -
                   </span>
-                  <span v-if="(event.hour && event.minutes)">
-                    {{ event.hour.toString().padStart(2, "0")  }}:{{ event.minutes.toString().padStart(2, "0") }}H
+                  <span v-if="event.hour && event.minutes">
+                    {{ event.hour.toString().padStart(2, "0") }}:{{
+                      event.minutes.toString().padStart(2, "0")
+                    }}H
                   </span>
                 </span>
               </p>
@@ -75,10 +128,18 @@
         </section>
       </main>
       <footer class="pb-4 px-5">
-        <img :src="require('../assets/' + template.logoBeatfellas)" alt="BeatFellas Logo" class="w-50" />
+        <img
+          :src="require('../assets/' + template.logoBeatfellas)"
+          alt="BeatFellas Logo"
+          class="w-50"
+        />
       </footer>
     </div>
-    <div v-if="ratio === 'ratio-9x16'" class="gui-instagram" :style="guiInstagram"></div>
+    <div
+      v-if="ratio === 'ratio-9x16'"
+      class="gui-instagram"
+      :style="guiInstagram"
+    ></div>
   </div>
 </template>
 <script>
@@ -164,7 +225,7 @@ header h1 {
   right: 0;
 }
 
-.background-overlay~* {
+.background-overlay ~ * {
   z-index: 1;
 }
 

@@ -2,6 +2,7 @@
     "title": "AGENDA",
     "titleOverlay": "#123beatboxnacional",
     "month": 9,
+    "shortmonth": 9,
     "year": 2022,
     "logoBeatfellas": "logo-beatfellas.png",
     "background": {
