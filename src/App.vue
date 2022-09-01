@@ -125,7 +125,9 @@ export default {
       return 0;
     });
 
-    console.log("JSON", template);
+    window.template = template;
+
+    console.log("JSON", window.template);
 
     return {
       calendarioTemplate: 0,
@@ -133,7 +135,7 @@ export default {
         width: 100,
         ratio: "ratio-1x1",
       },
-      template: template,
+      template: window.template,
     };
   },
 };
