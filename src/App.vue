@@ -5,18 +5,38 @@
         <form>
           <div class="form-group mb-3">
             <label for="selectRatio">Tipo de Calendário</label>
-            <select id="selectRatio" class="form-control" v-model="form.ratio" @change="generateTemplate">
+            <select
+              id="selectRatio"
+              class="form-control"
+              v-model="form.ratio"
+              @change="generateTemplate"
+            >
               <option disabled selected>Selecione o aspect ratio</option>
               <option value="ratio-1x1">1x1 (Quadrado, Feed)</option>
-              <option value="ratio-9x16">9x16 (Retangulo Vertical, Stories)</option>
+              <option value="ratio-9x16">
+                9x16 (Retangulo Vertical, Stories)
+              </option>
             </select>
           </div>
           <div class="form-group mb-3">
             <label for="inputWidth">Largura (em %)</label>
-            <input min="30" max="100" type="range" class="form-control" id="inputWidth" aria-describedby="widthHelp"
-              placeholder="Digite a largura do template" v-model="form.width" @change="generateTemplate" />
+            <input
+              min="30"
+              max="100"
+              type="range"
+              class="form-control"
+              id="inputWidth"
+              aria-describedby="widthHelp"
+              placeholder="Digite a largura do template"
+              v-model="form.width"
+              @change="generateTemplate"
+            />
           </div>
-          <button type="button" class="btn btn-primary" @click="generateTemplate">
+          <button
+            type="button"
+            class="btn btn-primary"
+            @click="generateTemplate"
+          >
             Reiniciar Template
           </button>
         </form>
@@ -24,7 +44,12 @@
     </div>
     <div class="row" id="maincontent">
       <div class="col-12">
-        <CalendarioTemplate :template="template" :ratio="form.ratio" :style="ratioWidth" :key="calendarioTemplate" />
+        <CalendarioTemplate
+          :template="template"
+          :ratio="form.ratio"
+          :style="ratioWidth"
+          :key="calendarioTemplate"
+        />
       </div>
     </div>
   </div>
@@ -49,10 +74,8 @@ export default {
   },
 
   methods: {
-
     generateTemplate() {
       this.calendarioTemplate += 1;
- 
     },
   },
 
@@ -65,24 +88,34 @@ export default {
   },
 
   data() {
-
     template.date = new Date(template.year, template.month - 1);
 
-    template.events.forEach(event => {
-      event.date = new Date(template.year, template.month - 1, event.day, event.hour, event.minutes, 0, 0);
-      event.closed = event.date < new Date();
-      event.type = (event.type || 'online').toString().toLowerCase();
-      event.price = (event.price || 'Gratuito')
-      if (!isNaN(event.price)) {
-        event.price = `R$ ${event.price}`
+    template.events.forEach((event) => {
+      event.date = new Date(
+        template.year,
+        template.month - 1,
+        event.day,
+        event.hour,
+        event.minutes,
+        0,
+        0
+      );
+
+      if (typeof event.closed === "undefined") {
+        event.closed = event.date < new Date();
       }
-      if (event.type == 'fechado') {
-        event.price = '';
+
+      event.type = (event.type || "online").toString().toLowerCase();
+      event.price = event.price || "Gratuito";
+      if (!isNaN(event.price)) {
+        event.price = `R$ ${event.price}`;
+      }
+      if (event.type == "fechado") {
+        event.price = "";
       }
     });
 
     template.events.sort(function (a, b) {
-
       if (a.date < b.date) {
         return -1;
       }
@@ -93,7 +126,6 @@ export default {
     });
 
     console.log("JSON", template);
-
 
     return {
       calendarioTemplate: 0,
