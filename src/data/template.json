@@ -13,53 +13,51 @@
         {
             "title": "Oficina",
             "location": "SESC São José dos Campos",
-            "day": 2,   
+            "day": 2,
             "type": "presencial",
             "price": "gratuito"
-
         },
         {
             "title": "Oficina",
             "location": "SESC São José dos Campos",
-            "day": 3,   
+            "day": 3,
             "type": "presencial",
             "price": "gratuito"
-
+        },
+        {
+            "title": "Oficina",
+            "location": "Vale do Anhangabaú",
+            "day": 6,
+            "type": "presencial",
+            "price": "gratuito"
         },
         {
             "title": "Oficina",
             "location": "SESC São José dos Campos",
-            "day": 4,   
-            "type": "presencial",
-            "price": "gratuito"
-
-        },
-        {
-            "title": "Beatmaster + Taboom",
-            "location": "Aplicativo Taboom",
-            "day": 18,
-            "hour": 16,
-            "minutes": 0,
-            "type": "online",
-            "price": "gratuito"
-        },
-        {
-            "title": "cavepool - show flip (part. mautari)",
-            "location": "Av. Eliseu de Almeida, 984 -  São Paulo - SP",
-            "day": 17,
-            "hour": 16,
-            "minutes": 0,
+            "day": 4,
             "type": "presencial",
             "price": "gratuito"
         },
         {
-            "title": "Beatmaster + Taboom",
-            "location": "Aplicativo Taboom",
-            "day": 10,
-            "hour": 16,
-            "minutes": 0,
-            "type": "online",
-            "price": "pago"
+            "title": "Oficina",
+            "location": "SESC Bom Retiro",
+            "day": 9,
+            "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Oficina",
+            "location": "Vale do Anhangabaú",
+            "day": 13,
+            "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Oficina",
+            "location": "SESC Bom Retiro",
+            "day": 16,
+            "type": "presencial",
+            "price": "gratuito"
         }
     ]
 }
