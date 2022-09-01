@@ -116,9 +116,9 @@
                   >
                     -
                   </template>
-                  <template v-if="event.hour && event.minutes">
+                  <template v-if="event.hour">
                     {{ event.hour.toString().padStart(2, "0") }}:{{
-                      event.minutes.toString().padStart(2, "0")
+                      (event.minutes || 0).toString().padStart(2, "0")
                     }}H
                   </template>
                 </span>
