@@ -34,7 +34,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "jquery/src/jquery.js";
 import "./scss/app.scss";
-import jsondata from "./data/template.json";
+import template from "./data/template.json";
 
 import CalendarioTemplate from "./components/CalendarioTemplate.vue";
 
@@ -52,7 +52,7 @@ export default {
 
     generateTemplate() {
       this.calendarioTemplate += 1;
-
+ 
     },
   },
 
@@ -66,13 +66,10 @@ export default {
 
   data() {
 
-    window.template = jsondata;
+    template.date = new Date(template.year, template.month - 1);
 
-    window.template.startDate = new Date(window.template.year, window.template.month - 1);
-    window.template.endDate = new Date(window.template.year, window.template.month, 0, 23, 59, 59, 999);
-
-    window.template.events.forEach(event => {
-      event.date = new Date(window.template.year, window.template.month - 1, event.day, event.hour, event.minutes, 0, 0);
+    template.events.forEach(event => {
+      event.date = new Date(template.year, template.month - 1, event.day, event.hour, event.minutes, 0, 0);
       event.closed = event.date < new Date();
       event.type = (event.type || 'online').toString().toLowerCase();
       event.price = (event.price || 'Gratuito')
@@ -84,10 +81,7 @@ export default {
       }
     });
 
-
-    window.template.events = window.template.events.filter(function (x) { return x.date >= window.template.startDate && x.date <= window.template.endDate })
-
-    window.template.events.sort(function (a, b) {
+    template.events.sort(function (a, b) {
 
       if (a.date < b.date) {
         return -1;
@@ -98,7 +92,7 @@ export default {
       return 0;
     });
 
-    console.log("Template Data", window.template);
+    console.log("JSON", template);
 
 
     return {
@@ -107,7 +101,7 @@ export default {
         width: 100,
         ratio: "ratio-1x1",
       },
-      template: window.template,
+      template: template,
     };
   },
 };

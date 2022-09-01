@@ -11,48 +11,39 @@
     },
     "events": [
         {
-            "title": "Palestra + Show NAVOX",
-            "location": "Câmara Municipal de São Paulo",
-            "day": 18,
-            "hour": 19,
-            "minutes": 30,
+            "title": "Sesc SJC - Oficina",
+            "location": "mansão maromba",
+            "day": 2,
+         
+           
             "type": "fechado"
         },
         {
-            "title": "Igor Guimarães + Comédia Solta (part. NAVOX)",
-            "location": "Rua Domingos de Morais, 348 - Vila Mariana",
-            "day": 24,
-            "hour": 21,
+            "title": "Beatmaster + Taboom",
+            "location": "Aplicativo Taboom",
+            "day": 18,
+            "hour": 16,
+            "minutes": 0,
+            "type": "online",
+            "price": "gratuito"
+        },
+        {
+            "title": "cavepool - show flip (part. mautari)",
+            "location": "Av. Eliseu de Almeida, 984 -  São Paulo - SP",
+            "day": 17,
+            "hour": 16,
             "minutes": 0,
             "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Beatmaster + Taboom",
+            "location": "Aplicativo Taboom",
+            "day": 10,
+            "hour": 16,
+            "minutes": 0,
+            "type": "online",
             "price": "pago"
-        },
-        {
-            "title": "Show Navox - Mês do Hip-Hop",
-            "location": "Casa de Cultura Brasilândia - Freguesia Do O, São Paulo",
-            "day": 25,
-            "hour": 15,
-            "minutes": 0,
-            "type": "presencial",
-            "price": "gratuito"
-        },
-        {
-            "title": "SHOW NAVOX - Feira do Bom Retiro",
-            "location": "Shopping Bom Retiro - R. José Paulino, 226 - Bom Retiro",
-            "day": 28,
-            "hour": 14,
-            "minutes": 0,
-            "type": "presencial",
-            "price": "gratuito"
-        },
-        {
-            "title": "Oficina de Beatbox - Sesc Birigui",
-            "location": "R. Manoel Domingos Ventura, 121 - Vila Xavier, Birigui - SP",
-            "day": 7,
-            "hour": 14,
-            "minutes": 30,
-            "type": "presencial",
-            "price": "gratuito"
         }
     ]
 }

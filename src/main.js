@@ -3,22 +3,6 @@ import {
 } from 'vue'
 import App from './App.vue'
 
-
-window.monthNames = [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro",
-  ]
-
 const app = createApp(App)
 
 function sleep(ms) {
@@ -99,13 +83,13 @@ app.directive("fitList", async(el, binding) => {
         while (li.clientHeight < (limit - 8) && li.clientWidth <= limitWidth) {
             li.querySelectorAll('span').forEach((span) => {
                 if (span.className.includes('event-day'))
-                    fontSize = parseInt(window.getComputedStyle(span).fontSize) + 13;
+                    fontSize = parseInt(window.getComputedStyle(span).fontSize) + 12;
                 else if (span.className.includes('event-type'))
-                    fontSize = parseInt(window.getComputedStyle(span).fontSize) + 4;
+                    fontSize = parseInt(window.getComputedStyle(span).fontSize) + 2;
                 else if (span.className.includes('event-title'))
-                    fontSize = parseInt(window.getComputedStyle(span).fontSize) + 8;
+                    fontSize = parseInt(window.getComputedStyle(span).fontSize) + 7;
                 else if (span.className.includes('event-info'))
-                    fontSize = parseInt(window.getComputedStyle(span).fontSize) + 5;
+                    fontSize = parseInt(window.getComputedStyle(span).fontSize) + 4;
                 else
                     fontSize = parseInt(window.getComputedStyle(span).fontSize) + 1;
 
@@ -116,13 +100,13 @@ app.directive("fitList", async(el, binding) => {
 
         li.querySelectorAll('span').forEach((span) => {
             if (span.className.includes('event-day'))
-                fontSize = parseInt(window.getComputedStyle(span).fontSize) - 13;
+                fontSize = parseInt(window.getComputedStyle(span).fontSize) - 12;
             else if (span.className.includes('event-type'))
-                fontSize = parseInt(window.getComputedStyle(span).fontSize) - 4;
+                fontSize = parseInt(window.getComputedStyle(span).fontSize) - 2;
             else if (span.className.includes('event-title'))
-                fontSize = parseInt(window.getComputedStyle(span).fontSize) - 8;
+                fontSize = parseInt(window.getComputedStyle(span).fontSize) - 7;
             else if (span.className.includes('event-info'))
-                fontSize = parseInt(window.getComputedStyle(span).fontSize) - 5;
+                fontSize = parseInt(window.getComputedStyle(span).fontSize) - 4;
             else
                 fontSize = parseInt(window.getComputedStyle(span).fontSize) - 1;
 
