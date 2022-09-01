@@ -64,7 +64,7 @@ import "jsoneditor/dist/jsoneditor.css";
 import JSONEditor from "jsoneditor";
 import "jquery/src/jquery.js";
 import "./scss/app.scss";
-import template from "./data/template.json";
+import jj from "./data/template.json";
 
 import CalendarioTemplate from "./components/CalendarioTemplate.vue";
 
@@ -93,9 +93,16 @@ export default {
   },
 
   data() {
-    window.template = template;
+    window.template = JSON.parse(localStorage.getItem("template")) || jj;
+    localStorage.setItem("template", JSON.stringify(window.template));
 
-    window.template.date = new Date(template.year, template.month - 1);
+      console.log("JSON",window.template);
+
+
+    window.template.date = new Date(
+      window.template.year,
+      window.template.month - 1
+    );
 
     window.template.events.forEach((event) => {
       event.date = new Date(
@@ -122,7 +129,7 @@ export default {
       }
     });
 
-    window.template.events = window.template.events.sort(function (a, b) {
+     window.template.events = window.template.events.sort(function (a, b) {
       if (a.date < b.date) {
         return -1;
       }
@@ -133,14 +140,13 @@ export default {
     });
 
     if (window.j_editor == null) {
-      console.log("JSON", window.template);
       window.j_editor = new JSONEditor(
         document.getElementById("jsoneditor"),
         {}
       );
     }
     // set json
-    window.j_editor.set(window.template);
+    window.j_editor.set( window.template);
 
     return {
       calendarioTemplate: 0,

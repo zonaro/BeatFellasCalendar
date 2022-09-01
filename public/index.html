@@ -19,18 +19,19 @@
 
 <body>
     <div id="jsoneditor" style="width: 400px; height: 400px;"></div>
-    <button id="link_download"   onclick="window.template =  window.j_editor.get();" class="btn btn-primary">Recarregar dados</button>
+    <button id="link_download" onclick="localStorage.setItem('template', JSON.stringify(window.j_editor.get()))"
+        class="btn btn-primary">Recarregar
+        dados</button>
     <noscript>
         <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
-            Please enable it to continue.</strong>
-            </noscript>
+                Please enable it to continue.</strong>
+    </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-    
-    <script>
- 
 
-      
+    <script>
+
+
     </script>
 </body>
 

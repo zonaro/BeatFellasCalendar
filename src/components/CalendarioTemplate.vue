@@ -77,6 +77,7 @@
             }"
           >
             <li
+              :style="{ display: event.disabled ? 'none!important' : '' }"
               v-for="event in template.events"
               :key="event"
               :data-closed="event.closed"
