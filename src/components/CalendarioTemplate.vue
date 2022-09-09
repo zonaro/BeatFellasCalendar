@@ -76,48 +76,51 @@
               numberOfItems: Object.keys(this.template.events).length,
             }"
           >
-            <li
-              v-for="event in template.events"
-              :key="event"
-              :data-closed="event.closed"
-              :class="'event-' + event.type.toString().toLowerCase()"
-              class="
-                event-item
-                list-unstyled
-                d-flex
-                align-items-center
-                justify-content-center
-                text-start
-                mb-2
-              "
-            >
-              <span
-                class="event-day skewx"
-                style="font-family: 'Days One', sans-serif"
-                >{{ event.day.toString().padStart(2, "0") }}</span
+            <template v-for="event in template.events" :key="event">
+              <li
+                v-if="event.disabled == false"
+                :data-closed="event.closed"
+                :class="'event-' + event.type.toString().toLowerCase()"
+                class="
+                  event-item
+                  list-unstyled
+                  d-flex
+                  align-items-center
+                  justify-content-center
+                  text-start
+                  mb-2
+                "
               >
-              <p class="event-data flex-grow-1 m-0">
-                <span class="event-type d-block"
-                  >{{ event.type }}
-                  <template v-if="event.price && event.type"> - </template>
-                  {{ event.price }}</span
+                <span
+                  class="event-day skewx"
+                  style="font-family: 'Days One', sans-serif"
+                  >{{ event.day.toString().padStart(2, "0") }}</span
                 >
-                <span class="event-title d-block">{{ event.title }}</span>
-                <span class="event-info d-block">
-                  <template v-if="event.location || event.app">{{
-                    event.location || event.app
-                  }}</template>
-                  <template v-if="(event.location || event.app) && event.hour">
-                    -
-                  </template>
-                  <template v-if="event.hour">
-                    {{ event.hour.toString().padStart(2, "0") }}:{{
-                      (event.minutes || 0).toString().padStart(2, "0")
-                    }}H
-                  </template>
-                </span>
-              </p>
-            </li>
+                <p class="event-data flex-grow-1 m-0">
+                  <span class="event-type d-block"
+                    >{{ event.type }}
+                    <template v-if="event.price && event.type"> - </template>
+                    {{ event.price }}</span
+                  >
+                  <span class="event-title d-block">{{ event.title }}</span>
+                  <span class="event-info d-block">
+                    <template v-if="event.location || event.app">{{
+                      event.location || event.app
+                    }}</template>
+                    <template
+                      v-if="(event.location || event.app) && event.hour"
+                    >
+                      -
+                    </template>
+                    <template v-if="event.hour">
+                      {{ event.hour.toString().padStart(2, "0") }}:{{
+                        (event.minutes || 0).toString().padStart(2, "0")
+                      }}H
+                    </template>
+                  </span>
+                </p>
+              </li></template
+            >
           </ul>
       </main>
       <footer class="pb-4 px-5">

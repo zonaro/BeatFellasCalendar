@@ -14,6 +14,7 @@
         "fitty": "^2.3.6",
         "i": "^0.3.7",
         "jquery": "^3.6.0",
+        "jsoneditor": "^9.9.0",
         "textfit": "^2.4.0",
         "vue": "^3.2.13",
         "vue-resize-text": "^0.1.1"

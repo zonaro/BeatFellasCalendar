@@ -16,12 +16,14 @@
             "location": "SESC São José dos Campos",
             "day": 2,
             "type": "presencial",
+            "disabled":true,
             "price": "gratuito"
         },
         {
             "title": "Oficina",
             "location": "SESC São José dos Campos",
             "day": 3,
+            "disabled":true,
             "type": "presencial",
             "price": "gratuito"
         },
@@ -29,12 +31,15 @@
             "title": "Oficina",
             "location": "Vale do Anhangabaú",
             "day": 6,
+            "hour":17,
+            "disabled":true,
             "type": "presencial",
             "price": "gratuito"
         },
         {
             "title": "Oficina",
             "location": "SESC São José dos Campos",
+            "disabled":true,
             "day": 4,
             "type": "presencial",
             "price": "gratuito"
@@ -42,6 +47,8 @@
         {
             "title": "Oficina",
             "location": "SESC Bom Retiro",
+            "disabled":true,
+            "hour":18,
             "day": 9,
             "type": "presencial",
             "price": "gratuito"
@@ -57,6 +64,8 @@
         {
             "title": "Oficina",
             "location": "Vale do Anhangabaú",
+            "disabled":true,
+            "hour":17,
             "day": 13,
             "type": "presencial",
             "price": "gratuito"
@@ -64,6 +73,8 @@
         {
             "title": "Oficina",
             "location": "SESC Bom Retiro",
+            "disabled":true,
+            "hour":18,
             "day": 16,
             "type": "presencial",
             "price": "gratuito"
@@ -79,6 +90,7 @@
         {
             "title": "Oficina",
             "location": "Vale do Anhangabaú",
+            "hour":17,
             "day": 20,
             "type": "presencial",
             "price": "gratuito"
@@ -86,6 +98,7 @@
         {
             "title": "Oficina",
             "location": "SESC Bom Retiro",
+            "hour":18,
             "day": 23,
             "type": "presencial",
             "price": "gratuito"
@@ -93,6 +106,7 @@
         {
             "title": "Oficina",
             "location": "Vale do Anhangabaú",
+            "hour":17,
             "day": 27,
             "type": "presencial",
             "price": "gratuito"
@@ -107,6 +121,8 @@
             "title": "Oficina",
             "location": "SESC Bom Retiro",
             "day": 30,
+            "hour":18,
+
             "type": "presencial",
             "price": "gratuito"
         }

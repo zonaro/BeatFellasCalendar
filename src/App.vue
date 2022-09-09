@@ -27,18 +27,27 @@
               class="form-control"
               id="inputWidth"
               aria-describedby="widthHelp"
-              placeholder="Digite a largura do template"
               v-model="form.width"
               @change="generateTemplate"
             />
           </div>
-          <button
+          <label for="inputWidth2">Zoom da Lista</label>
+          <input
+            type="number"
+            class="form-control"
+            id="inputWidth2"
+            aria-describedby="widthHelp"
+            v-model="form.width"
+            onchange="fixZoom(this.value)"
+          />
+
+          <!-- <button
             type="button"
             class="btn btn-primary"
             @click="generateTemplate"
           >
             Reiniciar Template
-          </button>
+          </button> -->
         </form>
       </div>
     </div>
@@ -56,10 +65,21 @@
 </template>
 
 <script>
+window.j_editor = null;
+
+window.fixZoom = function(v) {
+  v = v || 2;
+  document.querySelector(".event-list").style.zoom = v;
+  return v;
+}
+
 import "bootstrap/dist/css/bootstrap.min.css";
+// import jsoneditor from "jsoneditor/dist/jsoneditor.js";
+import "jsoneditor/dist/jsoneditor.css";
+import JSONEditor from "jsoneditor";
 import "jquery/src/jquery.js";
 import "./scss/app.scss";
-import template from "./data/template.json";
+import jj from "./data/template.json";
 
 import CalendarioTemplate from "./components/CalendarioTemplate.vue";
 
@@ -77,6 +97,11 @@ export default {
     generateTemplate() {
       this.calendarioTemplate += 1;
     },
+    setZoom() {
+      let v = parseInt(document.querySelector("#inputWidth2").value);
+      console.log("zoom", v);
+      window.fixZoom(v);
+    },
   },
 
   computed: {
@@ -88,15 +113,23 @@ export default {
   },
 
   data() {
-    template.date = new Date(template.year, template.month - 1);
+    window.template = JSON.parse(localStorage.getItem("template")) || jj;
+    localStorage.setItem("template", JSON.stringify(window.template));
 
-    template.events.forEach((event) => {
+    console.log("JSON", window.template);
+
+    window.template.date = new Date(
+      window.template.year || new Date().year,
+      window.template.month || new Date().month + 1 - 1
+    );
+
+    window.template.events.forEach((event) => {
       event.date = new Date(
-        template.year,
-        template.month - 1,
-        event.day,
-        event.hour,
-        event.minutes,
+        window.template.year,
+        window.template.month,
+        event.day || 1,
+        event.hour || 0,
+        event.minutes || 0,
         0,
         0
       );
@@ -105,8 +138,13 @@ export default {
         event.closed = event.date < new Date();
       }
 
+      if (typeof event.disabled === "undefined") {
+        event.disabled = false;
+      }
+
       event.type = (event.type || "online").toString().toLowerCase();
       event.price = event.price || "Gratuito";
+
       if (!isNaN(event.price)) {
         event.price = `R$ ${event.price}`;
       }
@@ -115,7 +153,7 @@ export default {
       }
     });
 
-    template.events.sort(function (a, b) {
+    window.template.events = window.template.events.sort(function (a, b) {
       if (a.date < b.date) {
         return -1;
       }
@@ -125,9 +163,14 @@ export default {
       return 0;
     });
 
-    window.template = template;
-
-    console.log("JSON", window.template);
+    if (window.j_editor == null) {
+      window.j_editor = new JSONEditor(
+        document.getElementById("jsoneditor"),
+        {}
+      );
+    }
+    // set json
+    window.j_editor.set(window.template);
 
     return {
       calendarioTemplate: 0,
