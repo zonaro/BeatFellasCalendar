@@ -122,6 +122,7 @@
               </li></template
             >
           </ul>
+        </section>
       </main>
       <footer class="pb-4 px-5">
         <img
