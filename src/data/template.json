@@ -48,6 +48,14 @@
         },
         {
             "title": "Oficina",
+            "location": "SESC Campo Limpo",
+            "day": 10,
+            "hour": 13,
+            "type": "presencial",
+            "price": "gratuito"
+        },
+        {
+            "title": "Oficina",
             "location": "Vale do Anhangabaú",
             "day": 13,
             "type": "presencial",
