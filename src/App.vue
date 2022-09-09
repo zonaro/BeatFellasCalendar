@@ -67,11 +67,11 @@
 <script>
 window.j_editor = null;
 
-window.fixZoom = function(v) {
+window.fixZoom = function (v) {
   v = v || 2;
   document.querySelector(".event-list").style.zoom = v;
   return v;
-}
+};
 
 import "bootstrap/dist/css/bootstrap.min.css";
 // import jsoneditor from "jsoneditor/dist/jsoneditor.js";
@@ -120,13 +120,13 @@ export default {
 
     window.template.date = new Date(
       window.template.year || new Date().year,
-      window.template.month || new Date().month + 1 - 1
+      window.template.month || new Date().month + 1
     );
 
     window.template.events.forEach((event) => {
       event.date = new Date(
         window.template.year,
-        window.template.month,
+        window.template.month - 1,
         event.day || 1,
         event.hour || 0,
         event.minutes || 0,
